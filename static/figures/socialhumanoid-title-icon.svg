@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">SocialHumanoid title icon</title>
+  <desc id="desc">An expressive humanoid with speech and motion arcs.</desc>
+  <defs>
+    <linearGradient id="panel" x1="28" y1="20" x2="226" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#123A4A"/>
+      <stop offset="1" stop-color="#102634"/>
+    </linearGradient>
+    <linearGradient id="body" x1="85" y1="88" x2="177" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#62DEC2"/>
+      <stop offset="1" stop-color="#28A98F"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#071B24" flood-opacity=".28"/>
+    </filter>
+  </defs>
+
+  <rect x="12" y="12" width="232" height="232" rx="58" fill="url(#panel)"/>
+  <circle cx="128" cy="128" r="91" fill="none" stroke="#FFFFFF" stroke-opacity=".07" stroke-width="2"/>
+
+  <!-- Speech / affect pulse -->
+  <path d="M42 84c10-15 23-23 38-28" fill="none" stroke="#FF9B7B" stroke-width="9" stroke-linecap="round"/>
+  <path d="M36 111c13-29 31-49 55-60" fill="none" stroke="#FF9B7B" stroke-opacity=".45" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="83" cy="54" r="7" fill="#FFD16A"/>
+
+  <!-- Motion arcs -->
+  <path d="M178 55c18 8 31 20 39 37" fill="none" stroke="#62DEC2" stroke-width="8" stroke-linecap="round"/>
+  <path d="M194 48c18 11 31 26 39 45" fill="none" stroke="#62DEC2" stroke-opacity=".35" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Humanoid -->
+  <g filter="url(#shadow)">
+    <rect x="91" y="55" width="74" height="62" rx="25" fill="#F4FAFB"/>
+    <rect x="101" y="68" width="54" height="34" rx="14" fill="#173B49"/>
+    <circle cx="117" cy="85" r="5" fill="#62DEC2"/>
+    <circle cx="139" cy="85" r="5" fill="#62DEC2"/>
+    <path d="M118 98c6 4 14 4 20 0" fill="none" stroke="#FF9B7B" stroke-width="4" stroke-linecap="round"/>
+    <rect x="117" y="112" width="22" height="17" rx="8" fill="#DCEBED"/>
+    <path d="M95 128c8-9 20-14 33-14s25 5 33 14l13 61c2 10-5 19-15 19H97c-10 0-17-9-15-19l13-61Z" fill="url(#body)"/>
+    <path d="M103 137l-35 22-17-17" fill="none" stroke="#F4FAFB" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M153 137l29 25 23-28" fill="none" stroke="#F4FAFB" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="128" cy="151" r="13" fill="#173B49"/>
+    <path d="M121 151h14M128 144v14" stroke="#FFD16A" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Small synchronized waveform -->
+  <path d="M72 220v-12m11 12v-22m11 22v-8m11 8v-17m11 17v-28m11 28v-13m11 13v-23m11 23v-9m11 9v-18m11 18v-12" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SocialHumanoid | Affective Humanoid Motion</title>
+  <meta name="description" content="SocialHumanoid is a real-time speech-driven system for generating affective, executable co-speech motion on a physical humanoid robot.">
+  <meta property="og:title" content="SocialHumanoid">
+  <meta property="og:description" content="A real-time speech-driven system for affective humanoid motion and physical robot deployment.">
+  <meta property="og:image" content="static/figures/background.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="static/figures/socialhumanoid-favicon.svg">
+  <link rel="preload" as="image" href="static/figures/background.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#overview">Skip to content</a>
+
+  <header class="site-header" aria-label="Primary">
+    <a class="brand" href="#top" aria-label="SocialHumanoid home">
+      <img class="brand-icon" src="static/figures/socialhumanoid-title-icon.svg" alt="" aria-hidden="true">
+      <span>SocialHumanoid</span>
+    </a>
+    <nav class="nav-links" aria-label="Project sections">
+      <a href="#overview">Overview</a>
+      <a href="#demos">Demos</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <!-- <a href="#citation">Citation</a> -->
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Real-time affective co-speech motion for humanoid robots</p>
+        <h1 id="page-title">SocialHumanoid</h1>
+        <p class="hero-title">A Real-Time Speech-Driven System for Affective Humanoid Motion</p>
+        <p class="hero-copy">
+          Given streaming speech and an affective condition, SocialHumanoid synthesizes emotionally expressive full-body motion, retargets it online, and executes it on a physical humanoid robot.
+        </p>
+        <div class="hero-actions" aria-label="Project links">
+          <a class="button primary" href="#demos">View demos</a>
+          <a class="button secondary" href="#results">Read results</a>
+          <span class="button muted" aria-disabled="true">Paper (coming soon)</span>
+          <span class="button muted" aria-disabled="true">arXiv (coming soon)</span>
+          <span class="button muted" aria-disabled="true">Code (coming soon)</span>
+          <span class="button muted" aria-disabled="true">Dataset (coming soon)</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section intro-section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="section-kicker">Overview</p>
+          <h2>Speech-aligned motion with visible affect and robot-ready execution.</h2>
+        </div>
+        <p class="lead">
+          Humanoid co-speech motion must do more than look plausible on a virtual skeleton. It needs to stay synchronized with speech, remain executable under robot constraints, and preserve distinguishable emotional styles after retargeting and control.
+        </p>
+        <div class="metric-grid" aria-label="Project highlights">
+          <article class="metric-card">
+            <span class="metric-value">3.929</span>
+            <span class="metric-label">FGD on BEAT2, best among compared methods</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">0.0281s</span>
+            <span class="metric-label">AIST for a 128-frame window on RTX 3090</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">1 NFE</span>
+            <span class="metric-label">One-step improved MeanFlow inference</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">4h / 8</span>
+            <span class="metric-label">AffectMoCap hours and emotion labels</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pipeline" class="section visual-section">
+      <div class="section-inner">
+        <div class="section-heading split">
+          <div>
+            <p class="section-kicker">System Pipeline</p>
+            <h2>From dialogue and speech to controllable full-body robot motion.</h2>
+          </div>
+          <p>
+            The runtime system connects response generation, speech synthesis, affect-conditioned motion generation, online retargeting, and whole-body control.
+          </p>
+        </div>
+        <figure class="wide-figure">
+          <img src="static/figures/pipeline.png" alt="SocialHumanoid pipeline from user input to LLM response, speech synthesis, motion generation, retargeting, and humanoid control.">
+          <figcaption>
+            Streaming speech and affective conditions drive an improved MeanFlow generator in SMPL-X space. The generated motion is retargeted into humanoid joint targets and tracked by a whole-body controller for synchronized robot execution.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="demos" class="section demo-section">
+      <div class="section-inner">
+        <div class="section-heading split">
+          <div>
+            <p class="section-kicker">Robot Demos</p>
+            <h2>Continuous speech-driven motion in real-world robot scenes.</h2>
+          </div>
+          <p>
+            Demonstrations cover multilingual speech, interactive dialogue, interaction-specific actions, emotion-conditioned motion, and long-horizon execution.
+          </p>
+        </div>
+
+        <div class="demo-tabs" role="tablist" aria-label="Demo categories">
+          <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-interactive" id="tab-interactive" data-demo-tab="interactive">Interactive</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-emotion" id="tab-emotion" data-demo-tab="emotion">Emotion Comparison</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-multilingual" id="tab-multilingual" data-demo-tab="multilingual">Multilingual</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-long" id="tab-long" data-demo-tab="long">Long Horizon</button>
+        </div>
+
+        <div class="demo-panel is-active" id="panel-interactive" role="tabpanel" aria-labelledby="tab-interactive" data-demo-panel="interactive">
+          <div class="video-grid two-up portrait-grid">
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/interact_en_v2.mp4" type="video/mp4">
+                <a href="static/videos/interact_en_v2.mp4">Open interaction demo 1</a>
+              </video>
+              <div class="video-meta">
+                <h3>Interactive Dialogue I</h3>
+                <p>Dialogue-conditioned robot motion with phrase-level movement changes.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/interact_cn.mp4" type="video/mp4">
+                <a href="static/videos/interact_cn.mp4">Open interaction demo 2</a>
+              </video>
+              <div class="video-meta">
+                <h3>Interactive Dialogue II</h3>
+                <p>Continuous interaction with affective co-speech motion on the physical humanoid.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="demo-panel" id="panel-emotion" role="tabpanel" aria-labelledby="tab-emotion" data-demo-panel="emotion" hidden>
+          <div class="video-grid emotion-grid portrait-grid">
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/emotion_neutral.mp4" type="video/mp4">
+                <a href="static/videos/emotion_neutral.mp4">Open neutral emotion demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Neutral</h3>
+                <p>Aligned speech input with neutral affective motion.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/emotion_happiness.mp4" type="video/mp4">
+                <a href="static/videos/emotion_happiness.mp4">Open happiness emotion demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Happiness</h3>
+                <p>Aligned speech input with happiness-conditioned motion.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/emotion_anger.mp4" type="video/mp4">
+                <a href="static/videos/emotion_anger.mp4">Open anger emotion demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Anger</h3>
+                <p>Aligned speech input with anger-conditioned motion.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/emotion_sadness.mp4" type="video/mp4">
+                <a href="static/videos/emotion_sadness.mp4">Open sadness emotion demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Sadness</h3>
+                <p>Aligned speech input with sadness-conditioned motion.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/emotion_surprise.mp4" type="video/mp4">
+                <a href="static/videos/emotion_surprise.mp4">Open surprise emotion demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Surprise</h3>
+                <p>Aligned speech input with surprise-conditioned motion.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/emotion_fear.mp4" type="video/mp4">
+                <a href="static/videos/emotion_fear.mp4">Open fear emotion demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Fear</h3>
+                <p>Aligned speech input with fear-conditioned motion.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/emotion_disgust.mp4" type="video/mp4">
+                <a href="static/videos/emotion_disgust.mp4">Open disgust emotion demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Disgust</h3>
+                <p>Aligned speech input with disgust-conditioned motion.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/emotion_contempt.mp4" type="video/mp4">
+                <a href="static/videos/emotion_contempt.mp4">Open contempt emotion demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Contempt</h3>
+                <p>Aligned speech input with contempt-conditioned motion.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/emotion_enthusiasm.mp4" type="video/mp4">
+                <a href="static/videos/emotion_enthusiasm.mp4">Open enthusiasm emotion demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Enthusiasm</h3>
+                <p>Aligned speech input with enthusiasm-conditioned motion.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="demo-panel" id="panel-multilingual" role="tabpanel" aria-labelledby="tab-multilingual" data-demo-panel="multilingual" hidden>
+          <div class="video-grid four-up">
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/en.mp4" type="video/mp4">
+                <a href="static/videos/en.mp4">Open English demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>English</h3>
+                <p>Speech-driven robot motion using the shared SocialHumanoid runtime pipeline.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/cn.mp4" type="video/mp4">
+                <a href="static/videos/cn.mp4">Open Chinese demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Chinese</h3>
+                <p>The same motion interface processes synthesized speech in Chinese.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/japanese.mp4" type="video/mp4">
+                <a href="static/videos/japanese.mp4">Open Japanese demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Japanese</h3>
+                <p>Full-body co-speech behavior remains continuous across language conditions.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/spanish.mp4" type="video/mp4">
+                <a href="static/videos/spanish.mp4">Open Spanish demo video</a>
+              </video>
+              <div class="video-meta">
+                <h3>Spanish</h3>
+                <p>Speech rhythm drives gesture timing while retargeting keeps execution stable.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="demo-panel" id="panel-long" role="tabpanel" aria-labelledby="tab-long" data-demo-panel="long" hidden>
+          <div class="long-demo">
+            <video controls preload="metadata" playsinline>
+              <source src="static/videos/long_test_5x_noaudio_tight_top40.mp4" type="video/mp4">
+              <a href="static/videos/long_test_5x_noaudio_tight_top40.mp4">Open long-horizon demo video</a>
+            </video>
+            <div>
+              <p class="section-kicker">Extended Streaming</p>
+              <h3>Over 10 minutes of continuous speech-driven generation, shown as a silent 5x speed-up.</h3>
+              <p>
+                The long-horizon run includes the fixed action inserts described in the paper, mixed into the continuous speech-driven motion stream while online retargeting and control keep the physical robot execution stable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dataset" class="section dataset-section">
+      <div class="section-inner">
+        <div class="section-heading split">
+          <div>
+            <p class="section-kicker">AffectMoCap Dataset</p>
+            <h2>Professional actor motion capture for affective body expression.</h2>
+          </div>
+          <p>
+            AffectMoCap contains synchronized speech, full-body SMPL-X motion, transcripts, speaker metadata, and emotion annotations across eight affective labels.
+          </p>
+        </div>
+        <div class="dataset-grid">
+          <article class="info-panel">
+            <h3>What it captures</h3>
+            <ul>
+              <li>Two professional actors, one male and one female.</li>
+              <li>Eight affective labels: neutral, happiness, anger, sadness, surprise, fear, disgust, and enthusiasm.</li>
+              <li>Full-body marker motion, hand motion-capture gloves, and synchronized 48 kHz speech audio.</li>
+              <li>Processed 16 kHz audio and 333D SMPL-X motion frames compatible with BEAT2-style training.</li>
+            </ul>
+          </article>
+          <figure class="dataset-figure">
+            <img src="static/figures/dataset_case.png" alt="Representative AffectMoCap skeleton and SMPL-X mesh samples from two actors.">
+            <figcaption>Representative AffectMoCap samples from two professional actors.</figcaption>
+          </figure>
+        </div>
+        <div class="figure-row">
+          <figure>
+            <img src="static/figures/data_pie.png" alt="Duration distribution of AffectMoCap by actor gender and emotion label.">
+            <figcaption>Duration distribution by actor gender and emotion category.</figcaption>
+          </figure>
+          <figure>
+            <img src="static/figures/capture_setup.png" alt="OptiTrack camera, marker suit, hand motion-capture gloves, and microphone kit used for AffectMoCap.">
+            <figcaption>Capture setup with optical tracking, gloves, and wireless audio.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="section method-section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="section-kicker">Method</p>
+          <h2>A co-speech generator wrapped in deployment-aware robot execution.</h2>
+        </div>
+        <div class="method-layout">
+          <div class="method-grid">
+            <article class="method-step">
+              <span class="step-number">01</span>
+              <h3>Part-wise latent motion</h3>
+              <p>Upper body, hands, lower body, and translation are encoded with residual vector quantized autoencoders, preserving detail while keeping online inference compact.</p>
+            </article>
+            <article class="method-step">
+              <span class="step-number">02</span>
+              <h3>Affect-conditioned generation</h3>
+              <p>Low-latency acoustic features are fused with emotion and speaker embeddings, then denoised by cross-attention and spatial-temporal Transformer blocks.</p>
+            </article>
+            <article class="method-step">
+              <span class="step-number">03</span>
+              <h3>Improved MeanFlow</h3>
+              <p>One-step interval-velocity sampling synthesizes each motion window fast enough for interactive speech-driven deployment.</p>
+            </article>
+            <article class="method-step">
+              <span class="step-number">04</span>
+              <h3>Retargeting and control</h3>
+              <p>Generated SMPL-X motion is converted to humanoid references with online retargeting, smoothed, queued, and tracked by a whole-body controller.</p>
+            </article>
+          </div>
+          <figure class="method-figure">
+            <img src="static/figures/imf.png" alt="Improved MeanFlow module for one-step latent motion generation.">
+            <figcaption>Improved MeanFlow predicts interval velocity in latent motion space for one-step real-time motion synthesis.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section results-section">
+      <div class="section-inner">
+        <div class="section-heading split">
+          <div>
+            <p class="section-kicker">Results</p>
+            <h2>Better motion realism with competitive synchrony and fast inference.</h2>
+          </div>
+          <p>
+            SocialHumanoid is evaluated on BEAT2, AffectMoCap, perceptual studies, ablations, and physical humanoid deployment.
+          </p>
+        </div>
+        <div class="table-grid">
+          <article class="result-panel">
+            <h3>BEAT2 Quantitative Evaluation</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>FGD <span>(down)</span></th>
+                    <th>BC <span>(up)</span></th>
+                    <th>Diversity <span>(up)</span></th>
+                    <th>NFE <span>(down)</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>EMAGE</td><td>5.512</td><td>0.772</td><td>13.06</td><td>2</td></tr>
+                  <tr><td>MambaTalk</td><td>5.366</td><td>0.781</td><td>13.05</td><td>2</td></tr>
+                  <tr><td>SynTalker</td><td>4.687</td><td>0.736</td><td>12.43</td><td>1000</td></tr>
+                  <tr><td>GestureLSM</td><td>4.088</td><td>0.714</td><td>13.24</td><td>8</td></tr>
+                  <tr><td>LiveGesture</td><td>4.570</td><td>0.794</td><td>13.91</td><td>32</td></tr>
+                  <tr class="ours-row"><td>SocialHumanoid</td><td>3.929</td><td>0.770</td><td>12.36</td><td>1</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="result-panel">
+            <h3>Runtime and Robot Modules</h3>
+            <div class="runtime-list">
+              <div>
+                <span>AIST on RTX 3090</span>
+                <strong>0.0281s</strong>
+              </div>
+              <div>
+                <span>Motion generation on RTX 4090</span>
+                <strong>0.006s</strong>
+              </div>
+              <div>
+                <span>Online retargeting</span>
+                <strong>1.248s</strong>
+              </div>
+              <div>
+                <span>Controller execution</span>
+                <strong>0.008s</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="study-grid">
+          <article class="result-panel">
+            <h3>Emotion and Style Recognition</h3>
+            <div class="bar-list" aria-label="Perceptual recognition accuracy">
+              <div class="bar-row"><span>AffectMoCap, audio + motion</span><div class="bar-track"><i style="width: 92.4%"></i></div><strong>92.4%</strong></div>
+              <div class="bar-row"><span>AffectMoCap, motion only</span><div class="bar-track"><i style="width: 88.6%"></i></div><strong>88.6%</strong></div>
+              <div class="bar-row"><span>SocialHumanoid, audio + generated motion</span><div class="bar-track"><i style="width: 86.3%"></i></div><strong>86.3%</strong></div>
+              <div class="bar-row"><span>SocialHumanoid, generated motion only</span><div class="bar-track"><i style="width: 82.7%"></i></div><strong>82.7%</strong></div>
+            </div>
+          </article>
+
+          <article class="result-panel">
+            <h3>Ablation Summary</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Variant</th>
+                    <th>FGD</th>
+                    <th>BC</th>
+                    <th>NFE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>w/o temporal attention</td><td>4.648</td><td>0.787</td><td>1</td></tr>
+                  <tr><td>w/o spatial attention</td><td>5.031</td><td>0.783</td><td>1</td></tr>
+                  <tr><td>w/o affective condition</td><td>4.730</td><td>0.768</td><td>1</td></tr>
+                  <tr><td>MeanFlow retraining</td><td>4.078</td><td>0.769</td><td>1</td></tr>
+                  <tr><td>Shortcut retraining</td><td>4.241</td><td>0.728</td><td>8</td></tr>
+                  <tr class="ours-row"><td>Full model</td><td>3.929</td><td>0.770</td><td>1</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+
+        <div class="figure-row">
+          <figure>
+            <img src="static/figures/cfg_sweep_fgd.png" alt="Classifier-free guidance scale sweep for FGD.">
+            <figcaption>CFG scale sweep shows the best FGD near 1.8.</figcaption>
+          </figure>
+          <figure>
+            <img src="static/figures/meanflow_loss_curve.png" alt="Training loss comparison between MeanFlow and improved MeanFlow.">
+            <figcaption>Improved MeanFlow reaches the low-loss regime earlier with fewer large fluctuations.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="citation" class="section citation-section">
+      <div class="section-inner">
+        <div class="section-heading split">
+          <div>
+            <p class="section-kicker">Citation</p>
+            <h2>BibTeX</h2>
+          </div>
+          <button class="button secondary copy-button" type="button" data-copy-citation>Copy</button>
+        </div>
+        <pre class="citation-box" tabindex="0"><code>@article{yang2026socialhumanoid,
+  title   = {SocialHumanoid: A Real-Time Speech-Driven System for Affective Humanoid Motion},
+  author  = {Yang, Chengqun and Zhu, Tengjie and Xu, Liang and Liu, Fulong and Ren, Guanzhu and Xing, Yitong and Mu, Yao and Yang, Xiaokang and Yan, Yichao},
+  journal = {IEEE Transactions on Circuits and Systems for Video Technology},
+  year    = {2026}
+}</code></pre>
+      </div>
+    </section> -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <span>SocialHumanoid</span>
+      <span>Real-time speech-driven affective motion for physical humanoid robots.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
