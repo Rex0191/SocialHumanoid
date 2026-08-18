@@ -111,18 +111,231 @@
             <h2>Continuous speech-driven motion in real-world robot scenes.</h2>
           </div>
           <p>
-            Demonstrations cover multilingual speech, interactive dialogue, interaction-specific actions, emotion-conditioned motion, and long-horizon execution.
+            Demonstrations cover BEAT2 benchmark comparisons, interactive dialogue, emotion-conditioned motion, multilingual speech, and long-horizon execution.
           </p>
         </div>
 
         <div class="demo-tabs" role="tablist" aria-label="Demo categories">
-          <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-interactive" id="tab-interactive" data-demo-tab="interactive">Interactive</button>
+          <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-beat2" id="tab-beat2" data-demo-tab="beat2">BEAT2 Comparison</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-interactive" id="tab-interactive" data-demo-tab="interactive">Interactive</button>
           <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-emotion" id="tab-emotion" data-demo-tab="emotion">Emotion Comparison</button>
           <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-multilingual" id="tab-multilingual" data-demo-tab="multilingual">Multilingual</button>
           <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-long" id="tab-long" data-demo-tab="long">Long Horizon</button>
         </div>
 
-        <div class="demo-panel is-active" id="panel-interactive" role="tabpanel" aria-labelledby="tab-interactive" data-demo-panel="interactive">
+        <div class="demo-panel is-active" id="panel-beat2" role="tabpanel" aria-labelledby="tab-beat2" data-demo-panel="beat2">
+          <div class="beat2-comparison">
+            <div class="comparison-intro">
+              <p class="section-kicker">BEAT2 Dataset Comparison</p>
+              <h3>Motion-space and robot-space comparisons across representative baselines.</h3>
+              <p>
+                Each case compares the same BEAT2 speech clip in the digital human motion space and after retargeting to the physical humanoid robot.
+              </p>
+            </div>
+
+            <section class="comparison-case" aria-labelledby="beat2-case-1">
+              <div class="comparison-case-header">
+                <span>Case I</span>
+                <h3 id="beat2-case-1">Sample 2_scott_0_1_1</h3>
+              </div>
+              <div class="paired-method-grid">
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="CaMN digital human comparison case I">
+                      <source src="static/videos/CaMN/2_scott_0_1_1.mp4" type="video/mp4">
+                      <a href="static/videos/CaMN/2_scott_0_1_1.mp4">Open CaMN digital human comparison case I</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="CaMN robot comparison case I">
+                      <source src="static/videos/CaMN/camn_1_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/CaMN/camn_1_g1-1.mp4">Open CaMN robot comparison case I</a>
+                    </video>
+                  </div>
+                  <h4>CaMN</h4>
+                </article>
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="DisCo digital human comparison case I">
+                      <source src="static/videos/DisCo/2_scott_0_1_1.mp4" type="video/mp4">
+                      <a href="static/videos/DisCo/2_scott_0_1_1.mp4">Open DisCo digital human comparison case I</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="DisCo robot comparison case I">
+                      <source src="static/videos/DisCo/disco_1_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/DisCo/disco_1_g1-1.mp4">Open DisCo robot comparison case I</a>
+                    </video>
+                  </div>
+                  <h4>DisCo</h4>
+                </article>
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="DiffSHEG digital human comparison case I">
+                      <source src="static/videos/DiffSHEG/2_scott_0_1_1.mp4" type="video/mp4">
+                      <a href="static/videos/DiffSHEG/2_scott_0_1_1.mp4">Open DiffSHEG digital human comparison case I</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="DiffSHEG robot comparison case I">
+                      <source src="static/videos/DiffSHEG/diffsheg_1_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/DiffSHEG/diffsheg_1_g1-1.mp4">Open DiffSHEG robot comparison case I</a>
+                    </video>
+                  </div>
+                  <h4>DiffSHEG</h4>
+                </article>
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="EMAGE digital human comparison case I">
+                      <source src="static/videos/EMAGE/2_scott_0_1_1.mp4" type="video/mp4">
+                      <a href="static/videos/EMAGE/2_scott_0_1_1.mp4">Open EMAGE digital human comparison case I</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="EMAGE robot comparison case I">
+                      <source src="static/videos/EMAGE/emage_1_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/EMAGE/emage_1_g1-1.mp4">Open EMAGE robot comparison case I</a>
+                    </video>
+                  </div>
+                  <h4>EMAGE</h4>
+                </article>
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="SynTalker digital human comparison case I">
+                      <source src="static/videos/SynTalker/2_scott_0_1_1.mp4" type="video/mp4">
+                      <a href="static/videos/SynTalker/2_scott_0_1_1.mp4">Open SynTalker digital human comparison case I</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="SynTalker robot comparison case I">
+                      <source src="static/videos/SynTalker/syntalker_1_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/SynTalker/syntalker_1_g1-1.mp4">Open SynTalker robot comparison case I</a>
+                    </video>
+                  </div>
+                  <h4>SynTalker</h4>
+                </article>
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="GestureLSM digital human comparison case I">
+                      <source src="static/videos/gesturelsm/2_scott_0_1_1_gesturelsm.mp4" type="video/mp4">
+                      <a href="static/videos/gesturelsm/2_scott_0_1_1_gesturelsm.mp4">Open GestureLSM digital human comparison case I</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="GestureLSM robot comparison case I">
+                      <source src="static/videos/gesturelsm/gesturelsm_1_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/gesturelsm/gesturelsm_1_g1-1.mp4">Open GestureLSM robot comparison case I</a>
+                    </video>
+                  </div>
+                  <h4>GestureLSM</h4>
+                </article>
+                <article class="method-pair-card is-ours">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="Ours digital human comparison case I">
+                      <source src="static/videos/ours/2_scott_0_1_1_improved_meanflow_spk2_best_fgd.mp4" type="video/mp4">
+                      <a href="static/videos/ours/2_scott_0_1_1_improved_meanflow_spk2_best_fgd.mp4">Open Ours digital human comparison case I</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="Ours robot comparison case I">
+                      <source src="static/videos/ours/ours_1_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/ours/ours_1_g1-1.mp4">Open Ours robot comparison case I</a>
+                    </video>
+                  </div>
+                  <h4>Ours</h4>
+                </article>
+              </div>
+            </section>
+
+            <section class="comparison-case" aria-labelledby="beat2-case-2">
+              <div class="comparison-case-header">
+                <span>Case II</span>
+                <h3 id="beat2-case-2">Sample 2_scott_0_2_2</h3>
+              </div>
+              <div class="paired-method-grid">
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="CaMN digital human comparison case II">
+                      <source src="static/videos/CaMN/2_scott_0_2_2.mp4" type="video/mp4">
+                      <a href="static/videos/CaMN/2_scott_0_2_2.mp4">Open CaMN digital human comparison case II</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="CaMN robot comparison case II">
+                      <source src="static/videos/CaMN/camn_2_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/CaMN/camn_2_g1-1.mp4">Open CaMN robot comparison case II</a>
+                    </video>
+                  </div>
+                  <h4>CaMN</h4>
+                </article>
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="DisCo digital human comparison case II">
+                      <source src="static/videos/DisCo/2_scott_0_2_2.mp4" type="video/mp4">
+                      <a href="static/videos/DisCo/2_scott_0_2_2.mp4">Open DisCo digital human comparison case II</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="DisCo robot comparison case II">
+                      <source src="static/videos/DisCo/disco_2_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/DisCo/disco_2_g1-1.mp4">Open DisCo robot comparison case II</a>
+                    </video>
+                  </div>
+                  <h4>DisCo</h4>
+                </article>
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="DiffSHEG digital human comparison case II">
+                      <source src="static/videos/DiffSHEG/2_scott_0_2_2.mp4" type="video/mp4">
+                      <a href="static/videos/DiffSHEG/2_scott_0_2_2.mp4">Open DiffSHEG digital human comparison case II</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="DiffSHEG robot comparison case II">
+                      <source src="static/videos/DiffSHEG/diffsheg_2_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/DiffSHEG/diffsheg_2_g1-1.mp4">Open DiffSHEG robot comparison case II</a>
+                    </video>
+                  </div>
+                  <h4>DiffSHEG</h4>
+                </article>
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="EMAGE digital human comparison case II">
+                      <source src="static/videos/EMAGE/2_scott_0_2_2.mp4" type="video/mp4">
+                      <a href="static/videos/EMAGE/2_scott_0_2_2.mp4">Open EMAGE digital human comparison case II</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="EMAGE robot comparison case II">
+                      <source src="static/videos/EMAGE/emage_2_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/EMAGE/emage_2_g1-1.mp4">Open EMAGE robot comparison case II</a>
+                    </video>
+                  </div>
+                  <h4>EMAGE</h4>
+                </article>
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="SynTalker digital human comparison case II">
+                      <source src="static/videos/SynTalker/2_scott_0_2_2.mp4" type="video/mp4">
+                      <a href="static/videos/SynTalker/2_scott_0_2_2.mp4">Open SynTalker digital human comparison case II</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="SynTalker robot comparison case II">
+                      <source src="static/videos/SynTalker/syntalker_2_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/SynTalker/syntalker_2_g1-1.mp4">Open SynTalker robot comparison case II</a>
+                    </video>
+                  </div>
+                  <h4>SynTalker</h4>
+                </article>
+                <article class="method-pair-card">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="GestureLSM digital human comparison case II">
+                      <source src="static/videos/gesturelsm/2_scott_0_2_2_gesturelsm.mp4" type="video/mp4">
+                      <a href="static/videos/gesturelsm/2_scott_0_2_2_gesturelsm.mp4">Open GestureLSM digital human comparison case II</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="GestureLSM robot comparison case II">
+                      <source src="static/videos/gesturelsm/gesturelsm_2_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/gesturelsm/gesturelsm_2_g1-1.mp4">Open GestureLSM robot comparison case II</a>
+                    </video>
+                  </div>
+                  <h4>GestureLSM</h4>
+                </article>
+                <article class="method-pair-card is-ours">
+                  <div class="paired-videos">
+                    <video controls preload="metadata" playsinline aria-label="Ours digital human comparison case II">
+                      <source src="static/videos/ours/2_scott_0_2_2_improved_meanflow_spk2_best_fgd.mp4" type="video/mp4">
+                      <a href="static/videos/ours/2_scott_0_2_2_improved_meanflow_spk2_best_fgd.mp4">Open Ours digital human comparison case II</a>
+                    </video>
+                    <video controls preload="metadata" playsinline aria-label="Ours robot comparison case II">
+                      <source src="static/videos/ours/ours_2_g1-1.mp4" type="video/mp4">
+                      <a href="static/videos/ours/ours_2_g1-1.mp4">Open Ours robot comparison case II</a>
+                    </video>
+                  </div>
+                  <h4>Ours</h4>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="demo-panel" id="panel-interactive" role="tabpanel" aria-labelledby="tab-interactive" data-demo-panel="interactive" hidden>
           <div class="video-grid two-up portrait-grid">
             <article class="video-card">
               <video controls preload="metadata" playsinline>
