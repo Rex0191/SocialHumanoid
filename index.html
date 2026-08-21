@@ -14,8 +14,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#overview">Skip to content</a>
-
   <header class="site-header" aria-label="Primary">
     <a class="brand" href="#top" aria-label="SocialHumanoid home">
       <img class="brand-icon" src="static/figures/socialhumanoid-title-icon.svg" alt="" aria-hidden="true">
@@ -38,7 +36,7 @@
       <div class="hero-content">
         <p class="eyebrow">Real-time affective co-speech motion for humanoid robots</p>
         <h1 id="page-title">SocialHumanoid</h1>
-        <p class="hero-title">A Real-Time Speech-Driven System for Affective Humanoid Motion</p>
+        <p class="hero-title">A Real-Time Co-speech Motion Generation System for Affective Humanoid Robots</p>
         <p class="hero-copy">
           Given streaming speech and an affective condition, SocialHumanoid synthesizes emotionally expressive full-body motion, retargets it online, and executes it on a physical humanoid robot.
         </p>
@@ -336,7 +334,7 @@
         </div>
 
         <div class="demo-panel" id="panel-interactive" role="tabpanel" aria-labelledby="tab-interactive" data-demo-panel="interactive" hidden>
-          <div class="video-grid two-up portrait-grid">
+          <div class="video-grid two-up portrait-grid interactive-grid">
             <article class="video-card">
               <video controls preload="metadata" playsinline>
                 <source src="static/videos/interact_en_v2.mp4" type="video/mp4">
@@ -355,6 +353,26 @@
               <div class="video-meta">
                 <h3>Interactive Dialogue II</h3>
                 <p>Continuous interaction with affective co-speech motion on the physical humanoid.</p>
+              </div>
+            </article>
+            <article class="video-card interactive-wide-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/interactive_long.mp4" type="video/mp4">
+                <a href="static/videos/interactive_long.mp4">Open multi-turn neutral dialogue demo</a>
+              </video>
+              <div class="video-meta">
+                <h3>Multi-turn Dialogue (Neutral)</h3>
+                <p>Multi-turn interactive dialogue with neutral affective robot motion.</p>
+              </div>
+            </article>
+            <article class="video-card interactive-wide-card">
+              <video controls preload="metadata" playsinline>
+                <source src="static/videos/interactive_long2.mp4" type="video/mp4">
+                <a href="static/videos/interactive_long2.mp4">Open multi-turn happiness dialogue demo</a>
+              </video>
+              <div class="video-meta">
+                <h3>Multi-turn Dialogue (Happiness)</h3>
+                <p>Multi-turn interactive dialogue with happiness-conditioned robot motion.</p>
               </div>
             </article>
           </div>

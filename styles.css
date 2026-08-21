@@ -61,23 +61,6 @@ button {
   cursor: pointer;
 }
 
-.skip-link {
-  position: fixed;
-  left: 16px;
-  top: 12px;
-  z-index: 100;
-  transform: translateY(-120%);
-  border-radius: var(--radius);
-  background: var(--paper);
-  color: var(--ink);
-  padding: 10px 14px;
-  box-shadow: var(--shadow);
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
-
 .site-header {
   position: fixed;
   inset: 0 0 auto;
@@ -103,9 +86,12 @@ button {
 }
 
 .brand-icon {
+  display: block;
   width: 26px;
   height: 26px;
   flex: 0 0 auto;
+  object-fit: cover;
+  clip-path: inset(1px 0 0 0 round 7px);
 }
 
 .nav-links {
@@ -492,6 +478,11 @@ figcaption {
 .portrait-grid .video-card video {
   aspect-ratio: 9 / 16;
   object-fit: cover;
+}
+
+#panel-interactive .portrait-grid .interactive-wide-card video {
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
 }
 
 .beat2-comparison {
